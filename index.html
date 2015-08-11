@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="GreatBallsOfFire : A binary mood lamp for all moods binary" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>GreatBallsOfFire</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/2dom/GreatBallsOfFire">View on GitHub</a>
+
+          <h1 id="project_title"GreatBallsOfFire</h1>
+          <h2 id="project_tagline">A binary mood lamp for all moods binary</h2>
+
+           
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>A solution without a problem ...</h2>
+
+<p><img src="https://raw.github.com/2dom/GreatBallsOfFire/master/pics/small_ball_light.jpg" alt="Ball Daylight"> </p>
+<p>This project is actually two projects. The first one is an ultra low cost LCD projector. The second one is a bed-side table lamp that shows the time.</p>
+
+<p>Why would you want a low cost projector? Well some 5 years ago, when everyone started talking about low cost pico-projectors I got really excited. I can imagine so many projects that could make use of those, from wall projected shopping lists to portable alphabet learning games for my  kids. Unfortunately pico-projection never really took off - there are a few smart phones that use them but they remain a somehow exotic and expensive technology. The cheapest pico-projector I can buy on Aliexpress is around 50$ which is rather steep. Also, they usually come in a portable projector type case with HDMI etc. which renders them pretty useless for small applications (unless you tear them down and re-engineer the projection device). </p>
+
+<p>The first inspiration for a super cheap projector came from the documentary "Exit through the gift shop" about the history of street art and/or a cynical view on the art scene in general. One of the shown street artist was "Invader". His thing was to glue little space invader mosaics to structures around the city. He considers himself a "hacker of public space spreading a virus of mosaic".</p>
+
+<p>I simply loved the idea to put subliminal pieces of art in various location around the city for people to discover. However, I found the medium of mosaic rather limited. There must be a better way to hack public spaces visually. So instead of using static mosaics, I came up with the idea to use projections. My version would have consisted of a little solar powered projectors hidden in public spaces broadcasting messages and logos at night and charging during the day. </p>
+
+<p><img src="https://raw.github.com/2dom/GreatBallsOfFire/master/pics/small_projector_closeup.jpg" alt="Projector closeup"></p>
+
+<p>In order to make this feasible, the whole set-up would have to be cheap ... dead cheap. Unattended projector hardware spitting out awesome imagery would most likely be stolen or destroyed within a very short amount of time.  </p>
+
+<p>Once I finished the projector part I realized that although it works, it is in fact unusable for the intended purpose. The core problem is a maximum projection distance of ~15cm, reducing the amount of suitable locations in a city to virtually zero.</p>
+
+<p>So I had a projection solution but no application. </p>
+
+<p>What finally gave me the idea to use the projector in my lamp project were the other properties of the projector ... round projection image and extremely low resolution. With the ~15cm projection distance this made a perfect fit.</p>
+
+<img src="https://raw.github.com/2dom/GreatBallsOfFire/master/pics/small_ball_dark_pos_neg.jpg" alt="BigBallOfFire">
+
+<p>I hope you enjoy the build.</p>
+
+
+
+
+
+
+
+<p><strong>Features:</strong></p>
+
+<ul>
+<li>Lovely monster pixel style with virtually unusable resolution</li>
+<li>180-ish° display - take that curved TV people</li>
+<li>Space Invaders!!!</li>
+<li>Glows in the dark</li>
+<li>Is made from half a phone and car parts</li>
+<li>Costs as much as your HDMI cable</li>
+</ul>
+
+<h2>The Projector</h2>
+
+<p>A projector is basically a light source illuminating an image plane that is then projected onto a projection surface using a projection lens. </p>
+
+<p>So in order to build the cheapest possible projector, I looked for the cheapest possible LCD and projection optics. The LCD part is easy: I used the trusty Nokia 5110 LCD display that costs ~2$ including shipping (I got 10, just because).<br>
+To convert the Nokia 5110 LCD into a back-projection display, one merely has to remove the back-light including diffuser, peel away the reflection foil on the back and cut a big gaping hole in the PCB (requires rerouting of some/all traces). This process uses up about 3-5 of your acquired 5110 displays. I used an Arduino with the Adafruit LCD library to drive it. Great ... display done. (The picture shows an ILI9341 color display that I tested - the procedure is the same for the 5110)</p>
+
+<img src="https://raw.github.com/2dom/GreatBallsOfFIre/master/pics/LCD_cutout.jpg" alt="LCD cutout"> </p>
+
+<p>The optics part was not quite so easy ... I experimented with zoom flashlights and magnifying glasses for a while which worked reasonable well. I abandoned the approach because of two simple reasons: 1) Zoom flashlights are a great light source however not that cheap to come by (we want to go ultra cheap remember) 2) magnifying glasses don't give you an evenly focused image if projected on a plain. Luckily I stumbled over a much better solution that solves both problems at once: Car logo projectors!!!</p>
+
+<img src="https://raw.github.com/2dom/GreatBallsOfFIre/master/pics/car_logo_projector.jpg" alt="Car logo projector"> </p>
+
+<p>If your car happens to be logo projector-less (shocking) here is what it does: a miniature projector installed at the bottom of every door projects a static brand logo on the pavement once the door opens. This is awesome for various reasoned:<br>
+These things are dead cheap (10$ a pair), they come with projection optics, condenser and best off all, an LED light source including constant current supply.</p>
+
+<p><img src="https://raw.github.com/2dom/GreatBallsOfFire/master/pics/small_projector_front.jpg" alt="Projector front"></p>
+
+<p> To make them usable was LCD projection optics a few modifications are required. First off, I opened the projector and removed the little plastic tube that holds all lenses including the logo disk. I then cut the optics tube at the precise location of the logo disk. I mounted the LED part onto a spare heat sink and wedged the condenser part of the optics between the modified LCD and the LED light source. The LCD was then fixed to the heat sink with the help of a few aluminum strips. Finally I 'mounted' the projection part of the optics on the LCD with the help of some trusty PVC tape. </p>
+
+<p><img src="https://raw.github.com/2dom/GreatBallsOfFire/master/pics/small_projector_mirror.jpg" alt="Projection mirror"></p>
+
+
+<p> I did some basic tests and found the projection to be infinitely better than my previous attempts with flashlights and minifying glasses. Nice contrast, crisp ... maybe a bit dim. </p>
+
+<p> Once I finished the projector part I tested it against various surfaces and I realized very quickly that this projector is not really usable to project in open spaces since the projection optics and light source are optimized for a projection distance of something like ~15cm. Beyond that images are very dim, extremely big and out of focus. </p>
+
+<p>I played with some geometrical optics software for a while but eventually have up (I kind of suck at optics).</p>
+
+<p>So I had created an awesome little projector but had no application for it.</p>
+
+<p>It was lying in a box for a few months before I found the perfect match for it.</p>
+
+<h2>The lamp</h2>
+
+<p>I need to basic things next to my bed: a night readable clock and a dimable light. The clock is to find out if there is still a point of going back to sleep when the kids woke us up again and the light to bring said kinds back to bed without stumbling over stuff. </p>
+
+<p>So I had a vague idea to put some 7-segment LED displays behind the milky glass of a lamp shade. But on second thought ... this would probably look totally rubbish. Nixie would be awesome, but a high voltage SMPS next to my head might not be the best idea. So I kind of shelved the project until I saw one of these projection clocks on ebay.</p>
+
+<p>These clocks have a small LCD display and projection optics to project the current time on the ceiling. The steps from ... "oh ... I can project stuff to the ceiling" to "oh no I can't because it would be huge" to "oh ... why don't I stick it in a lamp instead" were rather obvious.    
+
+<p><img src="https://raw.github.com/2dom/GreatBallsOfFire/master/pics/small_projector_side.jpg" alt="Projector side"></p>
+
+<p>So IKEA was next. I found a 9 EUR round milky lamp of the right size that would double as a lamp housing and projection surface. In order to squeeze the projector in the lamp I had to make a few modifications. First off, the projector turned out to be too big. When inside the lamp, the narrow distance between projection lens and projection surface would only give an image illuminating half of the lamp. A mirror installed at a 90° angle above the projection lens helped increasing that distance significantly - now the lamp was illuminated perfectly.
+
+<p>Finally I removed the bulb, cable and fixture from the original lamp-base and replaced it by an aluminum arm holding the projector and mirror in place. The hole in the base also provided enough room to accommodate the cables.</p>
+
+<p><img src="https://raw.github.com/2dom/GreatBallsOfFire/master/pics/small_projector_insert.jpg" alt="Projector insert"></p>
+
+<p>To drive the display, I modified some Adafruit LCD GFX library examples (space invader sprites!) to create the invader clock on the pictures. The clock currently displays time and an occasional space invader character is whizzing past every few minutes. I thought about using it a scrolling display for twitter feeds etc. but the low resolution makes that a pain to watch. And it is a bed-side table after all.</p>
+
+<h2>Going forward</h2>
+
+<p>Although I love the giant b/w pixel-look of the lamp, the resolution is simply too low to be very useful. I experimented with higher resolution color displays (ILI9341, etc.)  however they absorb much more light than the Nokia 5110. I also tried more powerful  (mains powered) LED light sources which resulted in a black spot burned into the LCD (ouch). Active cooling might help but, again, I have to sleep next to this thing. I researched small, high resolution monochrome LCD displays but there does not seem to be a big variety of those anymore. The only ones I found were the Sharp monochrome memory LCDs which are too expensive to butcher them. Any suggestion for low cost, high rest monochrome displays is highly appropriated</p>
+
+<p>If find the time to work on this project again I would love to modify the projection optics of the projector and put it in use around the city. So look out for your favorite 80s gaming system characters around town  :)
+
+  
+
+
+<center><iframe width="560" height="315" src="http://www.youtube.com/embed/aMzmFDZYUsI" frameborder="0" allowfullscreen></iframe></center>
+
+<h2>Bill of materials</h2>
+
+<p>Prices include delivery</p>
+
+<ul>
+<li>FADO Lamp (IKEA) - 10 EUR</li>
+<li>Car Logo Projector 1 (Aliexpress) - 4 EUR</li>
+<li>Nokia 5110 LCD (Aliexpress)- 2 EUR</li>
+<li>Borduino - 4 EUR</li>
+<li>12V power supply - 3 EUR</li>
+<li><strong>TOTAL: 23 EUR</strong></li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">The-radio maintained by <a href="https://github.com/2dom">2dom</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
