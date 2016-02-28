@@ -1,3 +1,3 @@
-MathBall
-=========
-Hacking some sense into the Little Tikes Goofy Giggles ... 
+GreatBallsOfFire
+=================
+A binary mood lamp for all moods binary
