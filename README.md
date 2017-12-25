@@ -1,3 +1,3 @@
-[GreatBallsOfFire](http://2dom.github.io/GreatBallsOfFire/)
+GreatBallsOfFire
 =================
-A binary mood lamp for all moods binary
+[GreatBallsOfFire](http://2dom.github.io/GreatBallsOfFire/)
